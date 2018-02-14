@@ -61,8 +61,9 @@ int main( int argc, char** args )
 		GL_FLOAT,           // type
 		GL_FALSE,           // normalized?
 		0,                  // stride
-		( void* ) 0            // array buffer offset
-	);		// Rendering Loop
+		( void* ) 0         // array buffer offset
+	);
+	// Rendering Loop
 	while( glfwWindowShouldClose( window ) == false )
 	{
 		if( glfwGetKey( window, GLFW_KEY_ESCAPE ) == GLFW_PRESS )
@@ -70,7 +71,7 @@ int main( int argc, char** args )
 
 		// Background Fill Color
 		glClearColor( 0.5f, 0.25f, 0.25f, 1.0f );
-		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );//glClear( GL_COLOR_BUFFER_BIT );
+		glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 		glDrawArrays( GL_TRIANGLES, 0, 3 );
 		// Flip Buffers and Draw
 		glfwSwapBuffers( window );
