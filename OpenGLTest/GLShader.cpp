@@ -4,7 +4,7 @@ GLShader::GLShader() {
 	shaderTypeIsKnown = false;
 }
 GLShader::GLShader( GLenum shaderType_ ) {
-	CreateShader();
+	CreateShader( shaderType_ );
 }
 GLShader::GLShader( const GLShader& other_ )
 {
