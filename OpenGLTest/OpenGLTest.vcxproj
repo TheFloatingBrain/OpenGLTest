@@ -124,7 +124,6 @@
     <ClCompile Include="GLShader.cpp" />
     <ClCompile Include="GLShaderProgram.cpp" />
     <ClCompile Include="MathSet.cpp" />
-    <ClCompile Include="MetaValList.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +131,6 @@
     <ClInclude Include="GLShader.h" />
     <ClInclude Include="GLShaderProgram.h" />
     <ClInclude Include="Include.h" />
-    <ClInclude Include="MetaValList.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="MathSet.h" />
     <ClInclude Include="Utility.h" />

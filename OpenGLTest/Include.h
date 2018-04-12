@@ -7,6 +7,7 @@
 #include <memory>
 #include <valarray>
 #include <math.h>
+#include <climits>
 #include <gl\include\glad\glad.h>
 #include <GLFW/glfw3.h>
 #include <glm\glm.hpp>

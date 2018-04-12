@@ -5,7 +5,7 @@ SCALER_TYPE_T MathSet< SCALER_TYPE_T, DIMENTIONS >::DotProduct( const THIS_TYPE_
 	auto inOrder = SmallerThanOrEqual( other );
 	const std::size_t MAX_SIZE = ( ( THIS_TYPE_T& ) ( std::get< 0 >( inOrder ) ) ).size();
 	auto result = std::get< 0 >( inOrder ) * std::get< 1 >( inOrder );
-	SCALER_TYPE_T magnitude = 
+	return result.sum();
 }
 template< typename SCALER_TYPE_T, SCALER_TYPE_T DIMENTIONS >
 THIS_TYPE_T MathSet< SCALER_TYPE_T, DIMENTIONS >::Translate( const THIS_TYPE_T& other, bool set = false );
