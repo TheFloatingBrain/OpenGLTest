@@ -1,13 +1,26 @@
 #include "GLShaderProgram.h"
 
-static const GLfloat BASIC_TRIANGLE_COORDINATES[] = {
+static /*const */ GLfloat BASIC_TRIANGLE_COORDINATES[] = {
 	-1.0f, -1.0f, 0.0f,
 	1.0f, -1.0f, 0.0f,
 	0.0f,  1.0f, 0.0f,
 };
+static const GLfloat SIMPLE_2D_SQUARE_COORDINATES[] = {
+	1.0f, 0.0f, 0.0f, 
+	1.0f, 1.0f, 0.0f, 
+	0.0f, 1.0f, 0.0f, 
+	0.0f, 0.0f, 0.0f
+};
+
+static GLfloat currentVertex[] = { SIMPLE_2D_SQUARE_COORDINATES[ 0 ], 
+		SIMPLE_2D_SQUARE_COORDINATES[ 1 ], SIMPLE_2D_SQUARE_COORDINATES[ 2 ] 
+};
 
 int main( int argc, char** args )
-{
+{	
+	InfInt myInt = "100000000334343324424324";
+	//myInt += 1;
+	std::cout << "Test: " << myInt << "\n";
 	// Load GLFW and Create a Window
 	glfwInit();
 	glfwWindowHint( GLFW_CONTEXT_VERSION_MAJOR, 4 );
@@ -48,24 +61,28 @@ int main( int argc, char** args )
 	/////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////Hello Triangle///////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
-	glGenVertexArrays( 1, &vertexArrayId );
-	glBindVertexArray( vertexArrayId );
-	glGenBuffers( 1, &vertexBuffer );
-	glBindBuffer( GL_ARRAY_BUFFER, vertexBuffer );
-	glBufferData( GL_ARRAY_BUFFER, sizeof( BASIC_TRIANGLE_COORDINATES ), BASIC_TRIANGLE_COORDINATES, GL_STATIC_DRAW );
-	glEnableVertexAttribArray( 0 );
-	glBindBuffer( GL_ARRAY_BUFFER, vertexBuffer );
-	glVertexAttribPointer(
-		0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-		3,                  // size
-		GL_FLOAT,           // type
-		GL_FALSE,           // normalized?
-		0,                  // stride
-		( void* ) 0         // array buffer offset
-	);
-	// Rendering Loop
+	GLfloat move = 0.f;
+	GLfloat speed = .001f;
 	while( glfwWindowShouldClose( window ) == false )
 	{
+		glGenVertexArrays( 1, &vertexArrayId );
+		glBindVertexArray( vertexArrayId );
+		glGenBuffers( 1, &vertexBuffer );
+		glBindBuffer( GL_ARRAY_BUFFER, vertexBuffer );
+		glBufferData( GL_ARRAY_BUFFER, sizeof( BASIC_TRIANGLE_COORDINATES ), BASIC_TRIANGLE_COORDINATES, GL_STATIC_DRAW );
+		glEnableVertexAttribArray( 0 );
+	//	glBindBuffer( GL_ARRAY_BUFFER, vertexBuffer );
+		glVertexAttribPointer(
+			0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+			3,                  // size
+			GL_FLOAT,           // type
+			GL_FALSE,           // normalized?
+			0,                  // stride
+			( void* ) 0         // array buffer offset
+		);
+
+		// Rendering Loop
+
 		if( glfwGetKey( window, GLFW_KEY_ESCAPE ) == GLFW_PRESS )
 			glfwSetWindowShouldClose( window, true );
 
@@ -76,6 +93,15 @@ int main( int argc, char** args )
 		// Flip Buffers and Draw
 		glfwSwapBuffers( window );
 		glfwPollEvents();
+		for( unsigned int i = 0; i < sizeof( BASIC_TRIANGLE_COORDINATES ); i += 3 )
+		{
+			BASIC_TRIANGLE_COORDINATES[ i ] += move;
+			std::cout << BASIC_TRIANGLE_COORDINATES[ i ] << "\n";
+		}
+		if( ( BASIC_TRIANGLE_COORDINATES[ 0 ] > .125f && speed > 0 ) || 
+				( BASIC_TRIANGLE_COORDINATES[ 0 ] < .13f && speed < 0 ) )
+			speed = -speed;
+		move += speed;
 	}
 	glDisableVertexAttribArray( 0 );
 	glfwTerminate();

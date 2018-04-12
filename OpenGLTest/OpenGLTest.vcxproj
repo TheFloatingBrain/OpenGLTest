@@ -70,7 +70,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\TheFl\Dependancies\Glad\Pip\cdebug\gl\include;C:\Users\TheFl\Dependancies\STB;C:\Users\TheFl\Dependancies\GLM\glm-0.9.8.5\glm\;C:\Users\TheFl\Dependancies\GLFW\glfw-3.2.1\glfw-3.2.1\include;C:\Users\TheFl\Dependancies\Glad\Pip\cdebug;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\TheFl\Dependancies\InfInt\sercantutar-infint-7356cd1;C:\Users\TheFl\Dependancies\Glad\Pip\cdebug\gl\include;C:\Users\TheFl\Dependancies\STB;C:\Users\TheFl\Dependancies\GLM\glm-0.9.8.5\glm\;C:\Users\TheFl\Dependancies\GLFW\glfw-3.2.1\glfw-3.2.1\include;C:\Users\TheFl\Dependancies\Glad\Pip\cdebug;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\TheFl\CMakeBuilds\be251a94-c0d0-6334-9969-7deae33aa2a5\install\x86-Debug\lib;$(LibraryPath)</LibraryPath>
     <SourcePath>C:\Users\TheFl\Dependancies\Glad\Pip\cdebug\gl\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
@@ -123,6 +123,8 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="GLShader.cpp" />
     <ClCompile Include="GLShaderProgram.cpp" />
+    <ClCompile Include="MathSet.cpp" />
+    <ClCompile Include="MetaValList.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +132,9 @@
     <ClInclude Include="GLShader.h" />
     <ClInclude Include="GLShaderProgram.h" />
     <ClInclude Include="Include.h" />
+    <ClInclude Include="MetaValList.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="MathSet.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
