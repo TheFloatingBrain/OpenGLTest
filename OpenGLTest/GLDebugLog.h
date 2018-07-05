@@ -5,7 +5,7 @@
 	struct GLDebugLog
 	{
 		GLint GetResult();
-		int GetLogLength();
+		GLint GetLogLength();
 		std::string GetLog();
 		protected:
 		GLint result, logLength;

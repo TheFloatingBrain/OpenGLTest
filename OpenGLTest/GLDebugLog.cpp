@@ -3,7 +3,7 @@
 GLint GLDebugLog::GetResult() {
 	return result;
 }
-int GLDebugLog::GetLogLength() {
+GLint GLDebugLog::GetLogLength() {
 	return logLength;
 }
 std::string GLDebugLog::GetLog() {

@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\TheFl\Dependancies\InfInt\sercantutar-infint-7356cd1;C:\Users\TheFl\Dependancies\Glad\Pip\cdebug\gl\include;C:\Users\TheFl\Dependancies\STB;C:\Users\TheFl\Dependancies\GLM\glm-0.9.8.5\glm\;C:\Users\TheFl\Dependancies\GLFW\glfw-3.2.1\glfw-3.2.1\include;C:\Users\TheFl\Dependancies\Glad\Pip\cdebug;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\TheFl\CMakeBuilds\be251a94-c0d0-6334-9969-7deae33aa2a5\install\x86-Debug\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\TheFl\Dependancies\Assimp\assimp-4.1.0\assimp-4.1.0\include;C:\Users\TheFl\Dependancies\InfInt\sercantutar-infint-7356cd1;C:\Users\TheFl\Dependancies\Glad\Pip\cdebug\gl\include;C:\Users\TheFl\Dependancies\STB;C:\Users\TheFl\Dependancies\GLM\glm-0.9.8.5\glm\;C:\Users\TheFl\Dependancies\GLFW\glfw-3.2.1\glfw-3.2.1\include;C:\Users\TheFl\Dependancies\Glad\Pip\cdebug;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\TheFl\Dependancies\Assimp\assimp-4.1.0\assimp-4.1.0\lib\Debug;C:\Users\TheFl\CMakeBuilds\be251a94-c0d0-6334-9969-7deae33aa2a5\install\x86-Debug\lib;$(LibraryPath)</LibraryPath>
     <SourcePath>C:\Users\TheFl\Dependancies\Glad\Pip\cdebug\gl\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -81,7 +81,7 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;assimp-vc140-mt.lib;IrrXML.lib;zlibd.lib;zlibstaticd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,7 +123,6 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="GLShader.cpp" />
     <ClCompile Include="GLShaderProgram.cpp" />
-    <ClCompile Include="MathSet.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +131,6 @@
     <ClInclude Include="GLShaderProgram.h" />
     <ClInclude Include="Include.h" />
     <ClInclude Include="Model.h" />
-    <ClInclude Include="MathSet.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
